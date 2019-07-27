@@ -2,13 +2,14 @@
 import os
 import sys
 
-template = None
-
-with open('template.cpp', 'r') as f:
+template = 'template.cpp'
+template_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), template)
+with open(template_path, 'r') as f:
     template = f.read()
 
+file_path = os.path.join(os.getcwd(), sys.argv[1])
 if len(sys.argv) > 1:
-    with open(sys.argv[1], 'w') as f:
+    with open(file_path, 'w') as f:
         f.write(template)
-        os.system('code ' + sys.argv[1])
+        os.system('code ' + file_path)
 
