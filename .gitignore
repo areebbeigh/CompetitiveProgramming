@@ -1,3 +1,8 @@
 \#inc*
 input.txt
+testing*
+*.out
 .vscode
+inp*
+sol2*
+out_*
